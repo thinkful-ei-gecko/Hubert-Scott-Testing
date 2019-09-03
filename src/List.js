@@ -5,8 +5,8 @@ import './index.css';
 
 function List(props){
 
-    const title = props.cards[0].title;
-    const content = props.cards[0].content;
+    const title = props.cards.title;
+    const content = props.cards.content;
 
     return (
         <section className="List">
@@ -14,25 +14,25 @@ function List(props){
                 <h2>{props.header}</h2>
             </header>
 
-            <div className='List-cards'>
+            {/* <div className='List-cards'>
                 <Card
                 title = {title}
                 content = {content}
                 ></Card>
 
-            </div>
-
-         {/* <div className="List-cards">
+            </div> */}
+   
+            <div className="List-cards">
             {props.cards.map((card) => {
                 return <Card 
                 key = {card.id}
                 title = {card.title}
                 content = {card.content} />
-            })}
-            <button type="button" className="List-button">
-                delete
+                })}
+                <button type="button" className="List-button">
+                    delete
             </button>
-         </ div> */}
+            </ div> 
         </ section>     
     )
 }

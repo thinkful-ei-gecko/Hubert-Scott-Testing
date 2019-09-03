@@ -6,7 +6,7 @@ import List from './List'
 function App(props) {
   const lists = props.store.lists;
   const allCards = props.store.allCards;
-  const cardsOne = lists[0].cardIds.map(id => allCards[id]);
+  const cardsOne = lists.cardIds.map(id => allCards[id]);
   // const cardsObj = cards.filter(id => {})
   // const itemsArr = items.map(item => {
   //  return 
@@ -18,8 +18,8 @@ function App(props) {
     </header>
       <div className="App-list">
         <List 
-        header = {lists[0].header}
-        cards = {cardsOne}
+          header = {lists.header}
+          cards = {cardsOne}
         />
       </div>
     </main>
