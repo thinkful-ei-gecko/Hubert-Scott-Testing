@@ -1,11 +1,27 @@
 import React from 'react';
 import STORE from './STORE'
-import './index.css'
+import './index.css';
+import List from './List'
 
-function App(STORE) {
+function App(props) {
+  const lists = props.store.lists;
+  const allCards = props.store.allCards;
+  const cardsOne = lists[0].cardIds.map(id => allCards[id]);
+  // const cardsObj = cards.filter(id => {})
+  // const itemsArr = items.map(item => {
+  //  return 
+  // })
   return (
     <main className='App'>
-      {/* content goes here */}
+      <header className="App-header">
+        <h1>Trelloyes!</h1>
+    </header>
+      <div className="App-list">
+        <List 
+        header = {lists[0].header}
+        cards = {cardsOne}
+        />
+      </div>
     </main>
   );
 }
