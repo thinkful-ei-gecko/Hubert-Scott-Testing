@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<List /> renders UI correctly 1`] = `
+<section
+  className="List"
+>
+  <header
+    className="List-header"
+  >
+    <h2>
+      test header
+    </h2>
+  </header>
+  <div
+    className="List-cards"
+  >
+    <div
+      className="Card"
+    >
+      <button
+        type="button"
+      >
+        delete
+      </button>
+      <h3>
+        test snapshot
+      </h3>
+      <p>
+        content
+      </p>
+    </div>
+    <div
+      className="Card"
+    >
+      <button
+        type="button"
+      >
+        delete
+      </button>
+      <h3>
+        test snapshot 2
+      </h3>
+      <p>
+        more content
+      </p>
+    </div>
+    <button
+      className="List-button"
+      type="button"
+    >
+      delete
+    </button>
+  </div>
+</section>
+`;

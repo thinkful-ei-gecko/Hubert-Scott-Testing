@@ -1,11 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import List from './List';
+import renderer from 'react-test-renderer';
 
-it('renders without crashing', () => {
-    const div = document.createElement('div');
+describe('<List />', () => {
+    it('renders without crashing', () => {
+        const div = document.createElement('div');
 
-    ReactDOM.render(<List header = 'Trelloyes' cards = {[{title:'test', content: 'content'}, {title: 'test2', content: 'more content'}]}/>, div)
+        ReactDOM.render(<List header='Trelloyes' cards={[{id: 'a', title: 'test snapshot', content: 'content' }, {id: 'b', title: 'test snapshot 2', content: 'more content'}]} />, div)
 
-    ReactDOM.unmountComponentAtNode(div);
+        ReactDOM.unmountComponentAtNode(div);
+    });
 });
+
+describe('<List />', () => {
+    it('renders UI correctly', () => {
+        const tree = renderer.create(<List header="test header" cards={[{id: 'a', title: 'test snapshot', content: 'content' }, {id: 'b', title: 'test snapshot 2', content: 'more content'}]} />).toJSON();
+        expect(tree).toMatchSnapshot();
+    })
+})
